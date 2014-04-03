@@ -113,6 +113,7 @@ GEM
     mysql2 (0.3.15)
     nio4r (1.0.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -214,6 +215,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  pg
   quiet_assets
   rails (= 4.1.0.rc2)
   rails_layout
