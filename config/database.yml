@@ -35,7 +35,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['AWS_DATABASE'] %>
   pool: 5
   username: <%= ENV['AWS_USERNAME'] %>
   password: <%= ENV['AWS_PASSWORD'] %>
