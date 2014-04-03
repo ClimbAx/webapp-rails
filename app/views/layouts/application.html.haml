@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Climbax'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Climbax'}"}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>    
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header#topNav{:style=>'height: 92px'}
+      .container        
+        <button class="btn" data-toggle="collapse" data-target=".nav-main-collapse" style="margin-top: 8px;"> <i class="fa fa-bars"></i> </button>
+        = link_to image_tag("/assets/logo.png", :width => 225), root_path, class: 'navbar-brand'
+        .navbar-collapse.nav-main-collapse.collapse.pull-right{:style => 'margin-top: 16px;'}
+          %nav.nav-main.mega-menu
+            %ul.nav.nav-pills.nav-main.scroll-menu#topMain
+              = render 'layouts/navigation_links'
+            
+              
+    %span#header_shadow{:style => "top: 92px;"}
+
+    #wrapper
+      %section.container.content{:style => "margin-top:50px"}        
+        = render 'layouts/messages'
+        = yield
+            
+            
